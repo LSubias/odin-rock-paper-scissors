@@ -48,12 +48,13 @@ var choice = options[Math.floor(Math.random()*options.length)]; // we random pic
 
 
 
-
+//WE create the function whit two parameters the player selection and the computer selection
 function playRound(playerSelection, computerSelection) { 
-  /*if (playerSelection === 'rock' && computerSelection === 'Paper'){
-    console.log(result);
+  // if player pick A and Computer B and A won we print the winner on the console
+  if (playerSelection == 'rock' && computerSelection == 'scissors')
+
 }                  
-    */
+  
   }
    
   const playerSelection = "rock";
