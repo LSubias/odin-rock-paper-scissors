@@ -1,6 +1,6 @@
 'use strict'
 
-console.log('si lees esto estas trabajando con el archivo correctamente');
+
 
 
 /*we need to do one game
@@ -43,23 +43,20 @@ function getComputerChoice(){ //will randomly return either ‘Rock’, ‘Paper
 var options = ['Rock', 'Paper', 'Scissors']; //we define the options in an Array
 var choice = options[Math.floor(Math.random()*options.length)]; // we random pick one item in the lenght of the array 
 
-//console.log(choice);
+console.log(choice);
 }
 
 
 
 //WE create the function whit two parameters the player selection and the computer selection
 function playRound(playerSelection, computerSelection) { 
-  // if player pick A and Computer B and A won we print the winner on the console
-  if (playerSelection == 'rock' && computerSelection == 'scissors')
 
 }                  
   
-  }
+  
    
   const playerSelection = "rock";
   const computerSelection = getComputerChoice();
-  // const result = "you lose" + playerSelection + "beats" + computerSelection; revisar en casa 
   console.log(playRound(playerSelection, computerSelection));
 
 
