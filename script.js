@@ -1,67 +1,55 @@
-'use strict'
-
-
-
-
-/*we need to do one game
-//rock scisors and paper
-
-Your game is going to play against the computer, 
-so begin with a function called getComputerChoice that
- will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’. 
- We’ll use this function in the game to make the computer’s play. 
- Tip: use the console to make sure this is returning 
- the expected output before moving to the next step!
-
-Write a function that plays a single round of Rock Paper Scissors. 
-The function should take two parameters - 
-the playerSelection and computerSelection - 
-and then return a string that declares 
-the winner of the round like so: "You Lose! Paper beats Rock"
-
-Make your function’s playerSelection parameter case-insensitive 
-(so users can input rock, ROCK, RocK or any other variation).
-
-Important note: you want to return the results of this function call, 
-not console.log() them. You’re going to use what you return later on, 
-so let’s test this function by using console.log to see the results:
-*/
-/*
-var myArray = [
-  "Apples",
-  "Bananas",
-  "Pears"
-];
-
-var randomItem = myArray[Math.floor(Math.random()*myArray.length)];
-
-document.body.innerHTML = randomItem;
-
-*/
+//the Computer Selection
 
 function getComputerChoice(){ //will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’. 
-var options = ['Rock', 'Paper', 'Scissors']; //we define the options in an Array
+var options = ['rock', 'paper', 'scissors']; //we define the options in an Array
 var choice = options[Math.floor(Math.random()*options.length)]; // we random pick one item in the lenght of the array 
-
-console.log(choice);
+return choice;
+//console.log("machine pick "  +choice);
 }
 
+//hacer una funcion que traiga lo que elije la persona
 
+function getHumanChoice(){
+  let h_pick = prompt('what do you choose');
+  return h_pick;
+}
 
-//WE create the function whit two parameters the player selection and the computer selection
-function playRound(playerSelection, computerSelection) { 
+const playerSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
-}                  
-  
-  
-   
-  const playerSelection = "rock";
-  const computerSelection = getComputerChoice();
-  console.log(playRound(playerSelection, computerSelection));
+console.log(playerSelection);
+console.log(computerSelection);
+var winner = 0; // numero de veces ganadas
+var loser = 0;// numero de veces perdidas
+var tie = 0;
 
+//solucion a una partida, da ganador, score y empate. 
+function playRound(human, computer){ // it starts picking the two variables
+   if (human == 'rock' && computer== 'scissors'){
+     winner = winner + 1; // if player won sum 1 to the score
+     console.log("you won rock beats scissors");
+}else if (human =='scissors' && computer=='rock'){
+  loser = loser + 1; // player lose and sum 1 to the score
+  console.log('you lose rock beats scissors');
+} else if ( human =='scissors' && computer=='paper'){
+  winner = winner + 1; // if player won sum 1 to the score
+  console.log('you won scissors beats paper');
+}else if(human =='paper' && computer=='scissors') {
+  loser = loser + 1; // player lose and sum 1 to the score
+  console.log('you lose scissors beats paper');
+}else if (human =='paper' && computer=='rock'){
+  winner = winner + 1; // if player won sum 1 to the score
+  console.log('you won paper beats rock');
+}else if (human =='rock' && computer=='paper'){
+  loser = loser + 1; // if player won sum 1 to the score
+  console.log('you lose paper beats rock');
+}else{
+  tie = tie + 1;
+  console.log('its a tie')
+}
 
-  /*
-  Write a NEW function called game(). 
-  Call the playRound function inside of this one to play a 5 round game 
-  that keeps score and reports a winner or loser at the end.
-  */
+}
+
+playRound(playerSelection, computerSelection);
+console.log(winner, loser);
+//console.log(playRound(playerSelection, computerSelection));
