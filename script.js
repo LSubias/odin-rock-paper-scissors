@@ -14,16 +14,18 @@ function getHumanChoice(){
   return h_pick;
 }
 
-const playerSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+//const playerSelection = getHumanChoice();
+//const computerSelection = getComputerChoice();
 
-console.log(playerSelection);
-console.log(computerSelection);
+//console.log(playerSelection);
+//console.log(computerSelection);
+
 var winner = 0; // numero de veces ganadas
 var loser = 0;// numero de veces perdidas
 var tie = 0;
-
+//var match = 0;
 //solucion a una partida, da ganador, score y empate. 
+
 function playRound(human, computer){ // it starts picking the two variables
    if (human == 'rock' && computer== 'scissors'){
      winner = winner + 1; // if player won sum 1 to the score
@@ -47,9 +49,32 @@ function playRound(human, computer){ // it starts picking the two variables
   tie = tie + 1;
   console.log('its a tie')
 }
-
+//match = +1;
 }
 
-playRound(playerSelection, computerSelection);
-console.log(winner, loser);
-//console.log(playRound(playerSelection, computerSelection));
+//playRound(playerSelection, computerSelection);
+//console.log(winner, loser);
+//console.log("number of games is "+match);
+
+
+function game (){
+  let i = 0;
+
+  while (i < 5) {
+    
+    const playerSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    i++;
+  }
+  return i; //devuelve el resultado de la funcion
+}
+
+//var match = 0;
+var result = game(); // aca guardo el resultado del loop
+//let games = (winner + loser);
+console.log("number of games is "+ result);//
+console.log("number of human wins is "+ winner +" and number of computer wins is "+ loser);
+
+
+///console.log(playRound(playerSelection, computerSelection));
