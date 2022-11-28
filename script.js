@@ -1,5 +1,6 @@
 //the Computer Selection
 
+/*
 function getComputerChoice(){ //will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’. 
 var options = ['rock', 'paper', 'scissors']; //we define the options in an Array
 var choice = options[Math.floor(Math.random()*options.length)]; // we random pick one item in the lenght of the array 
@@ -71,9 +72,13 @@ function game (){ //esta es la funcion que llama al juego 5 veces genero un loop
 
 //var match = 0;
 var result = game(); // aca guardo el resultado del loop
-//let games = (winner + loser);
+//let games = (winner + loser);//
+//paso los datos de las veces que se gano y se perdio 
+
 console.log("number of games is "+ result);// 
-console.log("number of human wins is "+ winner +" and number of computer wins is "+ loser); //paso los datos de las veces que se gano y se perdio 
+console.log("number of human wins is "+ winner +" and number of computer wins is "+ loser);
+console.log("number of games in tie" + tie); //empates
 
 
 ///console.log(playRound(playerSelection, computerSelection));
+*/
