@@ -27,9 +27,9 @@ var tie = 0;
 //solucion a una partida, da ganador, score y empate. 
 
 function playRound(human, computer){ // it starts picking the two variables
-   if (human == 'rock' && computer== 'scissors'){
-     winner = winner + 1; // if player won sum 1 to the score
-     console.log("you won rock beats scissors");
+  if (human == 'rock' && computer== 'scissors'){
+   winner = winner + 1; // if player won sum 1 to the score
+  console.log("you won rock beats scissors");
 }else if (human =='scissors' && computer=='rock'){
   loser = loser + 1; // player lose and sum 1 to the score
   console.log('you lose rock beats scissors');
@@ -57,11 +57,10 @@ function playRound(human, computer){ // it starts picking the two variables
 //console.log("number of games is "+match);
 
 
-function game (){
+function game (){ //esta es la funcion que llama al juego 5 veces genero un loop
   let i = 0;
 
-  while (i < 5) {
-    
+  while (i < 5) { 
     const playerSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
@@ -73,8 +72,8 @@ function game (){
 //var match = 0;
 var result = game(); // aca guardo el resultado del loop
 //let games = (winner + loser);
-console.log("number of games is "+ result);//
-console.log("number of human wins is "+ winner +" and number of computer wins is "+ loser);
+console.log("number of games is "+ result);// 
+console.log("number of human wins is "+ winner +" and number of computer wins is "+ loser); //paso los datos de las veces que se gano y se perdio 
 
 
 ///console.log(playRound(playerSelection, computerSelection));
