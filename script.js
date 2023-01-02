@@ -8,6 +8,8 @@ return choice;
 }
  
 
+
+//logica del juego humano vs computadora
 function playRound(human, computer){ // it starts picking the two variables
   if (human == 'rock' && computer== 'scissors'){
    winner = winner + 1; // if player won sum 1 to the score
@@ -33,13 +35,14 @@ function playRound(human, computer){ // it starts picking the two variables
 }
 }
 
-
+/*
 function getHumanChoice(){
 hpick = prompt('what do you choose?');
 return hpick;
 }
+*/
 
-
+//variables
 
 const playerSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
@@ -47,7 +50,8 @@ var round = 0;
 var winner = 0;
 var  loser = 0;
 var  tie = 0;
-
+/*
+funcion para hacer las 5 primeras rondas 
 function game (){
 for (let round = 0; round < 5; round++) {
 const playerSelection = getHumanChoice();
@@ -58,7 +62,5 @@ console.log('numero de partidas ganadas '+ winner);
 console.log('numero de partidas perdidas '+ loser);
 console.log('numero de partidas empatadas '+ tie);
 }
-
-
-game();
-
+//game();
+*/
