@@ -6,25 +6,7 @@ var choice = options[Math.floor(Math.random()*options.length)]; // we random pic
 return choice;
 //console.log("machine pick "  +choice);
 }
-
-//hacer una funcion que traiga lo que elije la persona
-
-function getHumanChoice(){
-  let h_pick = prompt('what do you choose');
-  return h_pick;
-}
-
-//const playerSelection = getHumanChoice();
-//const computerSelection = getComputerChoice();
-
-//console.log(playerSelection);
-//console.log(computerSelection);
-
-var winner = 0; // numero de veces ganadas
-var loser = 0;// numero de veces perdidas
-var tie = 0;
-//var match = 0;
-//solucion a una partida, da ganador, score y empate. 
+ 
 
 function playRound(human, computer){ // it starts picking the two variables
   if (human == 'rock' && computer== 'scissors'){
@@ -47,33 +29,36 @@ function playRound(human, computer){ // it starts picking the two variables
   console.log('you lose paper beats rock');
 }else{
   tie = tie + 1;
-  console.log('its a tie')
+  console.log('its a tie');
 }
-//match = +1;
-}
-
-//playRound(playerSelection, computerSelection);
-//console.log(winner, loser);
-//console.log("number of games is "+match);
-
-
-function game (){ //esta es la funcion que llama al juego 5 veces genero un loop
-  let i = 0;
-
-  while (i < 5) { 
-    const playerSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
-    i++;
-  }
-  return i; //devuelve el resultado de la funcion
 }
 
-//var match = 0;
-var result = game(); // aca guardo el resultado del loop
-//let games = (winner + loser);
-console.log("number of games is "+ result);// 
-console.log("number of human wins is "+ winner +" and number of computer wins is "+ loser); //paso los datos de las veces que se gano y se perdio 
+
+function getHumanChoice(){
+hpick = prompt('what do you choose?');
+return hpick;
+}
 
 
-///console.log(playRound(playerSelection, computerSelection));
+
+const playerSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+var round = 0;
+var winner = 0;
+var  loser = 0;
+var  tie = 0;
+
+function game (){
+for (let round = 0; round < 5; round++) {
+const playerSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+playRound(playerSelection, computerSelection);
+}
+console.log('numero de partidas ganadas '+ winner);
+console.log('numero de partidas perdidas '+ loser);
+console.log('numero de partidas empatadas '+ tie);
+}
+
+
+game();
+
